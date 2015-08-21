@@ -175,7 +175,8 @@ function markChanged(template, fieldName) {
     if (template &&
         template.view &&
         template.view._domrange &&
-        !template.view.isDestroyed) {
+        !template.view.isDestroyed &&
+        template.formValues[fieldName]) {
 
       template.formValues[fieldName].changed();
       template.formValues[fieldName].requestInProgress = false;
